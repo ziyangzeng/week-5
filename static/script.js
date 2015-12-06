@@ -97,13 +97,14 @@ function updateData(){
 
 		var rectangles = g_overlay.selectAll("rect").data(data.analysis);
 		rectangles.enter().append("rect");
+		
 		rectangles
-			.attr("x", function(d) {return d.x;})
-			.attr("y", function(d) {return d.y;})
-			.attr("width", function(d) {return d.width;})
+			.attr("x", function(d) { return d.x; })
+			.attr("y", function(d) { return d.y; })
+			.attr("width", function(d) { return d.width; })
 			.attr("height"， function(d) {return d.height;})
 			.attr("fill-opacity", ".2")
-			.attr("fill", function(d) {return "hsl(0, "+ Math.floor(d.value*100) + "%, 50%)";});
+			.attr("fill", function(d) { return "hsl(0, "+ Math.floor(d.value*100) + "%, 50%)"; });
 
 		// function to update the data
 		function update() {
