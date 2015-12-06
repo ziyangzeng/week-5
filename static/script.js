@@ -85,6 +85,9 @@ function updateData(){
 			})
 		;
 
+		update();
+		map.on("viewreset", update);
+
 		var topleft = projectPoint(lat2, lng1);
 
 		svg_overlay.attr("width",w)
@@ -104,6 +107,7 @@ function updateData(){
 
 		// function to update the data
 		function update() {
+			g_overlay.selectAll("rect").remove()
 
 			// get bounding box of data
 		    var bounds = path.bounds(data),
@@ -128,8 +132,7 @@ function updateData(){
 		};
 
 		// call function to 
-		update();
-		map.on("viewreset", update);
+		
 	});
 
 };
